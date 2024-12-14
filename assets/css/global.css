@@ -67,3 +67,10 @@ a:hover {
     margin: 1rem 2rem;
   }
 }
+
+.signature {
+  width: 3rem;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
