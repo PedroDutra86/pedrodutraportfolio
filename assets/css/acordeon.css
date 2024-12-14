@@ -1,0 +1,76 @@
+.acordeon {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 2rem 0;
+  border: 1px solid white;
+  border-radius: 1rem;
+  transition: 0.25s;
+}
+
+.acordeon.open,
+.acordeon:hover {
+  background-color: #55569e;
+  border-color: #55569e;
+}
+
+.acordeon .trigger {
+  text-align: start;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: 700;
+  transition: background-color 0.2s ease-in;
+}
+
+.acordeon .trigger::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/assets/icons/arrowIcon.svg);
+  transition: 0.7s;
+}
+
+.acordeon.open .trigger::after {
+  transform: rotate(180deg);
+}
+
+.acordeon .trigger:hover {
+  cursor: pointer;
+}
+
+.acordeon .content {
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.25s;
+  margin-left: 2rem;
+  transition: max-height 0.5s ease-in;
+}
+
+.acordeon.open .content {
+  display: block;
+  height: auto;
+  max-height: 950px;
+  transition: max-height 0.5s ease-in;
+}
+
+@media screen and (max-width: 568px) {
+  .acordeon .trigger {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .acordeon .trigger {
+    font-size: 0.8rem;
+  }
+}
